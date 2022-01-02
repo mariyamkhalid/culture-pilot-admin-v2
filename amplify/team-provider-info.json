@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-culturepilotadmin-dev-211349-authRole",
+      "UnauthRoleArn": "arn:aws:iam::363668041378:role/amplify-culturepilotadmin-dev-211349-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::363668041378:role/amplify-culturepilotadmin-dev-211349-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-culturepilotadmin-dev-211349-deployment",
+      "UnauthRoleName": "amplify-culturepilotadmin-dev-211349-unauthRole",
+      "StackName": "amplify-culturepilotadmin-dev-211349",
+      "StackId": "arn:aws:cloudformation:us-east-1:363668041378:stack/amplify-culturepilotadmin-dev-211349/04214d70-66c3-11ec-960e-0e3bcf6934bf",
+      "AmplifyAppId": "dmtiw4kjrgxk0"
+    },
+    "categories": {
+      "auth": {
+        "culturepilotadmin3210d461": {}
+      }
+    }
+  }
+}

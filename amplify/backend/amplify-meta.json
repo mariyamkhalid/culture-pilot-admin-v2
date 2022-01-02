@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-culturepilotadmin-dev-211349-authRole",
+      "UnauthRoleArn": "arn:aws:iam::363668041378:role/amplify-culturepilotadmin-dev-211349-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::363668041378:role/amplify-culturepilotadmin-dev-211349-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-culturepilotadmin-dev-211349-deployment",
+      "UnauthRoleName": "amplify-culturepilotadmin-dev-211349-unauthRole",
+      "StackName": "amplify-culturepilotadmin-dev-211349",
+      "StackId": "arn:aws:cloudformation:us-east-1:363668041378:stack/amplify-culturepilotadmin-dev-211349/04214d70-66c3-11ec-960e-0e3bcf6934bf",
+      "AmplifyAppId": "dmtiw4kjrgxk0"
+    }
+  },
+  "auth": {
+    "culturepilotadmin3210d461": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-culturepilotadmin-dev-211349-deployment/amplify-cfn-templates/auth/culturepilotadmin3210d461-cloudformation-template.json",
+        "logicalId": "authculturepilotadmin3210d461"
+      },
+      "lastPushTimeStamp": "2021-12-27T04:54:33.152Z",
+      "output": {
+        "UserPoolId": "us-east-1_Vw1Yjknjr",
+        "AppClientIDWeb": "5auruagv2j5nn69v4vfc9jpfu4",
+        "AppClientID": "45q3n5m164hlrkhhke1rf1j8g4",
+        "IdentityPoolId": "us-east-1:b5d273f7-269b-41ed-9a8a-a9794e9bd32c",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:363668041378:userpool/us-east-1_Vw1Yjknjr",
+        "IdentityPoolName": "culturepilotadmin3210d461_identitypool_3210d461__dev",
+        "UserPoolName": "culturepilotadmin3210d461_userpool_3210d461"
+      },
+      "lastPushDirHash": "1NJYKJzPHvEXhQwkLhVfnqXzC6s="
+    }
+  }
+}
