@@ -3,37 +3,44 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-
-import { createNewCity } from "../Utils";
+import { createNewOrg } from "../Utils";
 import { Auth } from "aws-amplify";
 
-export default function CityForm() {
+export default function OrgForm(props) {
   const [show, setShow] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
-  const [cityName, setCityName] = useState("");
-  const [cityIntro, setCityIntro] = useState("");
-  const [cityLatitude, setCityLatitude] = useState();
-  const [cityLongitude, setCityLongitude] = useState("");
   const [fileName, setFileName] = useState("");
   const [validated, setValidated] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const changeCityImage = (event) => {
+  const [orgName, setOrgName] = useState("");
+  const changeOrgName = (event) => {
+    console.log(event.target.value);
+    setOrgName(event.target.value);
+  };
+
+  const [orgPhysical, setOrgPhysical] = useState(false);
+  const changeOrgPhysical = (event) => {
+    console.log(event.target.checked);
+    setOrgPhysical(event.target.checked);
+  };
+  const [orgDesc, setOrgDesc] = useState("");
+  const changeOrgDesc = (event) => {
+    setOrgDesc(event.target.value);
+  };
+  const [orgLatitude, setOrgLatitude] = useState("");
+  const changeOrgLatitude = (event) => {
+    setOrgLatitude(event.target.value);
+  };
+  const [orgLongitude, setOrgLongitude] = useState("");
+  const changeOrgLongitude = (event) => {
+    setOrgLongitude(event.target.value);
+  };
+
+  const changeOrgImage = (event) => {
     setSelectedFile(event.target.files[0]);
     setFileName(event.target.files[0].name);
-  };
-  const changeCityName = (event) => {
-    setCityName(event.target.value);
-  };
-  const changeCityIntro = (event) => {
-    setCityIntro(event.target.value);
-  };
-  const changeCityLatitude = (event) => {
-    setCityLatitude(event.target.value);
-  };
-  const changeCityLongitude = (event) => {
-    setCityLongitude(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -47,14 +54,16 @@ export default function CityForm() {
       return;
     }
     const user = await Auth.currentAuthenticatedUser();
-    await createNewCity(
+    await createNewOrg(
       user.signInUserSession.idToken.jwtToken,
       selectedFile,
       fileName,
-      cityName,
-      cityIntro,
-      cityLatitude,
-      cityLongitude
+      orgName,
+      orgDesc,
+      orgLatitude,
+      orgLongitude,
+      orgPhysical,
+      props.city
     )
       .then(setShow(false))
       .catch((error) => {
@@ -65,66 +74,71 @@ export default function CityForm() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add City
+        Add Org
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add a new city</Modal.Title>
+          <Modal.Title>Add a new Org</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group as={Col} md="20" controlId="validationCustom01">
-              <Form.Label>City Name</Form.Label>
+            <Form.Group as={Col} md="20" controlId="validationCustom00">
+              <Form.Label>Organization Name</Form.Label>
               <Form.Control
                 required
                 type="text"
                 maxLength={20}
-                onChange={changeCityName}
+                onChange={changeOrgName}
+              />
+            </Form.Group>
+            <Form.Group controlId="validationCustom01">
+              <Form.Check
+                type="checkbox"
+                label="Physical Org"
+                onClick={changeOrgPhysical}
               />
             </Form.Group>
             <Form.Group as={Col} md="20" controlId="validationCustom02">
-              <Form.Label>City Intro</Form.Label>
+              <Form.Label>Org Description</Form.Label>
               <Form.Control
                 type="text"
                 maxLength={120}
                 required
-                onChange={changeCityIntro}
+                onChange={changeOrgDesc}
               />
               <Form.Text> Limited to 120 chars</Form.Text>
             </Form.Group>
             <Form.Group as={Col} md="20" controlId="validationCustom03">
-              <Form.Label>City Latitude</Form.Label>
+              <Form.Label>Org Latitude</Form.Label>
               <Form.Control
                 type="number"
                 step="0.000000000001"
                 maxLength={120}
-                required
-                onChange={changeCityLatitude}
+                onChange={changeOrgLatitude}
               />
             </Form.Group>
             <Form.Group as={Col} md="20" controlId="validationCustom04">
-              <Form.Label>City Longitude</Form.Label>
+              <Form.Label>Org Longitude</Form.Label>
               <Form.Control
                 type="number"
                 step="0.000000000001"
                 maxLength={120}
-                required
-                onChange={changeCityLongitude}
+                onChange={changeOrgLongitude}
               />
             </Form.Group>
             <Form.Group as={Col} md="20" controlId="validationCustom05">
-              <Form.Label>City Image</Form.Label>
+              <Form.Label>Org Image</Form.Label>
               <Form.Control
                 type="file"
                 maxLength={120}
                 required
                 accept=".png"
-                onChange={changeCityImage}
+                onChange={changeOrgImage}
               />
             </Form.Group>
 
-            <Button type="submit">Create City</Button>
+            <Button type="submit">Create Org</Button>
           </Form>
         </Modal.Body>
       </Modal>

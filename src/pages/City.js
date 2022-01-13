@@ -8,6 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import { deleteCity, patchCity } from "../Utils";
+import { Link } from "react-router-dom";
 
 const callGetCities = async () => {
   const user = await Auth.currentAuthenticatedUser();
@@ -24,6 +25,7 @@ export default function City() {
   const [showEdit, setShowEdit] = useState(false);
   const [citiesMap, setCitiesMap] = useState({});
   const [currentCityId, setCurrentCityId] = useState("");
+  const [currentCityName, setCurrentCityName] = useState("");
 
   const handleSubmit = async (e) => {
     const form = e.currentTarget;
@@ -78,6 +80,7 @@ export default function City() {
       <button
         key={data.City}
         onClick={() => {
+          setCurrentCityName(data.City);
           setCurrentCityId(data.Id);
           setCityIntro(data.Intro);
           setCityLatitude(data.Latitude);
@@ -132,7 +135,6 @@ export default function City() {
               <Form.Control
                 type="number"
                 step="0.000000000001"
-                min="0"
                 maxLength={120}
                 required
                 defaultValue={
@@ -148,7 +150,6 @@ export default function City() {
               <Form.Control
                 type="number"
                 step="0.000000000001"
-                min="0"
                 maxLength={120}
                 required
                 defaultValue={
@@ -170,6 +171,9 @@ export default function City() {
             </Form.Group>
             <Button type="submit">Update City</Button>
             <Button onClick={handleDelete}>Delete City</Button>
+            <Link to={"/orgs/" + currentCityName}>
+              <Button>Manage Orgs</Button>
+            </Link>
           </Form>
         </Modal.Body>
       </Modal>
