@@ -113,7 +113,7 @@ export default function Tours() {
       tourOutside,
       currentTourId
     )
-      .then(showEdit(false))
+      .then(setShowEdit(false))
       .catch((error) => {
         console.error(error);
       });
@@ -204,7 +204,7 @@ export default function Tours() {
                   onChange={changeTourImage}
                 />
               </Form.Group>
-              <Button type="submit">Update Org</Button>
+              <Button type="submit">Update Tour</Button>
               <Button onClick={handleDelete}>Delete Tour</Button>
               <Link to={"/objects/" + currentTourId + "/" + params.city}>
                 <Button>Manage Objects</Button>
