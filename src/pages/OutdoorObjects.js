@@ -142,7 +142,7 @@ export default function OutdoorObjects() {
                   <Form.Control
                     required
                     type="text"
-                    maxLength={20}
+                    maxLength={200}
                     onChange={changeObjectName}
                     value={objectName}
                   />
@@ -151,7 +151,7 @@ export default function OutdoorObjects() {
                   <Form.Label>Object Details</Form.Label>
                   <Form.Control
                     type="text"
-                    maxLength={500}
+                    maxLength={5000}
                     required
                     onChange={changeObjectDetails}
                     value={objectDetails}
@@ -162,7 +162,7 @@ export default function OutdoorObjects() {
                   <Form.Label>Object Latitude</Form.Label>
                   <Form.Control
                     type="number"
-                    step="0.000000000001"
+                    step="0.00000000000000001"
                     maxLength={120}
                     required
                     onChange={changeObjectLatitude}
@@ -173,7 +173,7 @@ export default function OutdoorObjects() {
                   <Form.Label>Object Longitude</Form.Label>
                   <Form.Control
                     type="number"
-                    step="0.000000000001"
+                    step="0.00000000000000001"
                     maxLength={120}
                     required
                     onChange={changeObjectLongitude}
@@ -184,7 +184,7 @@ export default function OutdoorObjects() {
                   <Form.Label>Object Image</Form.Label>
                   <Form.Control
                     type="file"
-                    maxLength={120}
+                    maxLength={1200}
                     accept=".png"
                     onChange={changeObjectImage}
                   />
