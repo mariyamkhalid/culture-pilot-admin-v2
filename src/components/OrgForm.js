@@ -88,7 +88,7 @@ export default function OrgForm(props) {
               <Form.Control
                 required
                 type="text"
-                maxLength={20}
+                maxLength={200}
                 onChange={changeOrgName}
               />
             </Form.Group>
@@ -103,7 +103,7 @@ export default function OrgForm(props) {
               <Form.Label>Org Description</Form.Label>
               <Form.Control
                 type="text"
-                maxLength={120}
+                maxLength={1200}
                 required
                 onChange={changeOrgDesc}
               />
@@ -113,7 +113,7 @@ export default function OrgForm(props) {
               <Form.Label>Org Latitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 onChange={changeOrgLatitude}
               />
@@ -122,7 +122,7 @@ export default function OrgForm(props) {
               <Form.Label>Org Longitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 onChange={changeOrgLongitude}
               />

@@ -79,7 +79,7 @@ export default function CityForm() {
               <Form.Control
                 required
                 type="text"
-                maxLength={20}
+                maxLength={200}
                 onChange={changeCityName}
               />
             </Form.Group>
@@ -87,7 +87,7 @@ export default function CityForm() {
               <Form.Label>City Intro</Form.Label>
               <Form.Control
                 type="text"
-                maxLength={120}
+                maxLength={1200}
                 required
                 onChange={changeCityIntro}
               />
@@ -97,7 +97,7 @@ export default function CityForm() {
               <Form.Label>City Latitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 required
                 onChange={changeCityLatitude}
@@ -107,7 +107,7 @@ export default function CityForm() {
               <Form.Label>City Longitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 required
                 onChange={changeCityLongitude}

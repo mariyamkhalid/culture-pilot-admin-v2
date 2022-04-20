@@ -121,7 +121,7 @@ export default function City() {
               <Form.Label>City Intro</Form.Label>
               <Form.Control
                 type="text"
-                maxLength={120}
+                maxLength={1200}
                 required
                 defaultValue={
                   citiesMap[currentCityId] ? citiesMap[currentCityId].Intro : ""
@@ -134,7 +134,7 @@ export default function City() {
               <Form.Label>City Latitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 required
                 defaultValue={
@@ -149,7 +149,7 @@ export default function City() {
               <Form.Label>City Longitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 required
                 defaultValue={

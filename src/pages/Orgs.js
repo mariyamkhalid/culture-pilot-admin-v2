@@ -146,7 +146,7 @@ export default function Orgs() {
               <Form.Label>Org Description</Form.Label>
               <Form.Control
                 type="text"
-                maxLength={120}
+                maxLength={1200}
                 required
                 onChange={changeOrgDesc}
                 defaultValue={orgDesc}
@@ -157,7 +157,7 @@ export default function Orgs() {
               <Form.Label>Org Latitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 min="0"
                 maxLength={120}
                 onChange={changeOrgLatitude}
@@ -168,7 +168,7 @@ export default function Orgs() {
               <Form.Label>Org Longitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 min="0"
                 maxLength={120}
                 onChange={changeOrgLongitude}

@@ -92,7 +92,7 @@ export default function TourForm(props) {
               <Form.Control
                 required
                 type="text"
-                maxLength={20}
+                maxLength={200}
                 onChange={changeTourName}
               />
             </Form.Group>
@@ -114,7 +114,7 @@ export default function TourForm(props) {
               <Form.Label>Tour Description</Form.Label>
               <Form.Control
                 type="text"
-                maxLength={120}
+                maxLength={1200}
                 required
                 onChange={changeTourDesc}
               />
@@ -124,7 +124,7 @@ export default function TourForm(props) {
               <Form.Label>Tour Latitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 onChange={changeTourLatitude}
               />
@@ -133,7 +133,7 @@ export default function TourForm(props) {
               <Form.Label>Tour Longitude</Form.Label>
               <Form.Control
                 type="number"
-                step="0.000000000001"
+                step="0.000000000000001"
                 maxLength={120}
                 onChange={changeTourLongitude}
               />
